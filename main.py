@@ -13,12 +13,12 @@ LONG_BREAK_MIN = 20
 reps = 0
 timer = None
 
-# ---------------------------- TIMER RESET ------------------------------- # 
 
-
+# ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
     global timer
     global reps
+
     window.after_cancel(timer)
     canvas.itemconfig(timer_text, text="00:00")
     mode_label.config(text="")
@@ -29,6 +29,7 @@ def reset_timer():
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
     global reps
+
     reps += 1
     work_sec = WORK_MIN * 60
     short_break_sec = SHORT_BREAK_MIN * 60
@@ -47,7 +48,6 @@ def start_timer():
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 def count_down(count):
-
     count_min = math.floor(count / 60)
     count_sec = count % 60
     if count_sec < 10:
